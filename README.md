@@ -20,13 +20,10 @@ Webcam -> OpenCV -> MediaPipe -> PySerial ---(USB serial)---> ESP32 -> Servo(s)
 
 ## Wiring
 
-<!-- Replace this with your wiring mockup image -->
-![Wiring diagram](docs/wiring.png)
-
 | Component         | ESP32 Pin | Notes                                               |
 | ----------------- | --------- | --------------------------------------------------- |
-| Pan servo signal  | `GPIO XX` | Update to match your build                          |
-| Tilt servo signal | `GPIO XX` | Update to match your build                          |
+| Pan servo signal  | `GPIO 19` | Update to match your build                          |
+| Tilt servo signal | `GPIO 18` | Update to match your build                          |
 | Servo VCC         | `5V`      | Use an external supply if servos draw heavy current |
 | Servo GND         | `GND`     | Share a common ground with the ESP32                |
 
