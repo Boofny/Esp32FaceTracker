@@ -5,23 +5,23 @@ import numpy as np
 import cv2
 import mediapipe as mp
 
-# print(os.name)
-# if os.name == "nt":
-#     osPort = "COM3"
-#     print("windows")
-# else:
-#     osPort = "/dev/ttyUSB0"
-#     print("linux")
+print(os.name)
+if os.name == "nt":
+    osPort = "COM3"
+    print("windows")
+else:
+    osPort = "/dev/ttyUSB0"
+    print("linux")
 
 # espData = serial.Serial('/dev/ttyUSB0', 9600) linux explicit
-# espData = serial.Serial(osPort, 9600)
+espData = serial.Serial(osPort, 9600)
 
 mp_face = mp.solutions.face_detection
 face = mp_face.FaceDetection(model_selection=1, min_detection_confidence=0.3)
 
 def send_coordinates_to_arduino(x, y):
     coordinates = f"{x},{y}\r"
-    # espData.write(coordinates.encode())
+    espData.write(coordinates.encode())
     # print(f"X{x}Y{y}\n")
 
 capture = cv2.VideoCapture(0)
